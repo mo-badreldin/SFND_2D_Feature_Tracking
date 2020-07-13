@@ -65,7 +65,9 @@ int main(int argc, const char *argv[])
 
         if(dataBuffer.size() == dataBufferSize)
         {
+            //rotate left elements of vector
             rotate(dataBuffer.begin(),dataBuffer.begin()+1,dataBuffer.end());
+            // overwrite last element of vector
             *(dataBuffer.end()-1) = frame;
         }
         else
