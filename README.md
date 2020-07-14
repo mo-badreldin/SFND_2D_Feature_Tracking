@@ -32,3 +32,15 @@ See the classroom instruction and code comments for more details on each of thes
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./2D_feature_tracking`.
+
+## Midterm Project Performance Evaluation
+
+THe runtime performance is a deceisive factor in Realtime applications like feature tracking in the field of driving assistance and automated driving. Therefore the TOP3 would be:
+
+1. FAST + BRIEF		Avg t = 1.25 ms , Avg match Perc. = 74%
+
+2. FAST + ORB		Avg t = 1.56 ms , Avg match Perc. = 72%
+
+3. FAST + BRISK		Avg t = 2.22 ms , Avg match Perc. = 60%
+
+Avg t (detector time + descriptor time), Avg match percentage (Matched KeyPts / Total KeyPts)
