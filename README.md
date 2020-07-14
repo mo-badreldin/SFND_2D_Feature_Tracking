@@ -33,6 +33,38 @@ See the classroom instruction and code comments for more details on each of thes
 3. Compile: `cmake .. && make`
 4. Run it: `./2D_feature_tracking`.
 
+## Midterm Project Report
+
+* MP.1 Data Buffer Optimization
+
+A new dataBuffer object is pushed only if size of vector is less than maximum size. Once max size is reached, all vector elements are rotated to the left with first element becoming last element. Then last element is overwritten with the new databuffer
+
+* MP.2 Keypoint Detection
+
+Used OpenCV methods to implement the required detectors. For SHITOMASSI and HARRIS the configuration is provided to the APIs. In case of Modern detectors, the create for the needed detector is used which provide the default configuration parameters for the detector based on its type
+
+* MP.3 Keypoint Removal
+
+Used rectangle contains method to keep only Keypts located inside the rectangle
+
+* MP.4 Keypoint Descriptors
+
+Used OpenCV methods to implement the required descriptors. The method create is used to create the correct descriptor and the method compute is used to compute the descriptor and fill the Mat
+
+* MP.5 Descriptor Matching
+
+Used OpenCV FlannBasedMatcher class to create FLANN matcher. 
+Used OpenCV KnnMatch method to implement K-Nearest-Neighbor matching
+
+* MP.6 Descriptor Distance Ratio
+
+Calculated the ratio between nearest and second nearest matches from Knn matcher. If the ratio is more than 0.8 the match is not added to the matches output vector (i.e: excluded)
+
+* MP.7.8.9 Performance Evaluation 1/2/3
+
+Print out the size of KeyPts, the KeyPts on the vehicle and the size of the matches on the vehicle. Print the time for detector and descriptor calculation methods. Use BF approach for matching with distance ration filter. Provide data for all detector/descriptor combination is /doc/ Udacity_Camera2d_ProjectReport.xlsx file
+
+
 ## Midterm Project Performance Evaluation
 
 THe runtime performance is a deceisive factor in Realtime applications like feature tracking in the field of driving assistance and automated driving. Therefore the TOP3 would be:
